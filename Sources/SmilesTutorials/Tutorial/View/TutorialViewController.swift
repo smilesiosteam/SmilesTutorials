@@ -23,7 +23,7 @@ public class TutorialViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     // MARK: -- Properties
-    public static let storyboardVC = UIStoryboard(name: "Tutorial", bundle: Bundle.module).instantiateInitialViewController()
+    public static let storyboardVC = UIStoryboard(name: "Tutorial", bundle: Bundle.module).instantiateInitialViewController() as! TutorialViewController
     
     private var autoScroller: CollectionViewAutoScroller!
     private var slides = [
@@ -32,7 +32,7 @@ public class TutorialViewController: UIViewController {
         Slide(title: "Personalized suggestions", subTitle: "We at smiles personalize the offers you see based on your interests and lifestyle. Hop into a world that is tailor made for you.", imageName: "slide3_image", animationName: "")
     ]
     weak var timer: Timer?
-    public var skipToLoginAction: (() -> Void)?
+    public var skipToLoginAction={}
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +113,7 @@ public class TutorialViewController: UIViewController {
     
     @IBAction func skipToLoginTapped(_ sender: UIButton) {
         // Fires a closure to open the login view controller
-        self.skipToLoginAction?()
+        self.skipToLoginAction()
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -142,7 +142,10 @@ extension TutorialViewController {
             for cell in coll.visibleCells {
                 let indexPath: IndexPath? = coll.indexPath(for: cell)
                 if let row = indexPath?.row, let section = indexPath?.section {
-                    if (row  <= (self.slides.count - 1)) {
+                    print("\(row):\(self.slides.count)")
+                    if (row  == self.slides.count-1) {
+                        skipToLoginAction()
+                    } else if (row  < (self.slides.count - 1)) {
                         let indexPath1: IndexPath?
                         indexPath1 = IndexPath(row: row + 1, section: section)
                         self.pageController.currentPage = row
