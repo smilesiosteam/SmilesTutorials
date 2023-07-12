@@ -67,7 +67,7 @@ import UIKit
         didSet { reloadData() }
     }
     
-    var currentIndex: Int = 0
+    public var currentIndex: Int = 0
     public var currentPage: Int {
         set { updateCurrentPage(newValue) }
         get { return currentIndex }
@@ -144,8 +144,8 @@ import UIKit
     }
     
     /// Content location
-    public var contentAlignment: JXPageControlAlignment =
-        JXPageControlAlignment(.center,
+    open var contentAlignment: JXPageControlAlignment =
+        JXPageControlAlignment(.left,
                                .center) {
         didSet { reloadLayout()
             updateProgress(CGFloat(currentIndex)) }
