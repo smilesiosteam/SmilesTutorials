@@ -9,6 +9,7 @@ import UIKit
 import SmilesFontsManager
 import SmilesUtilities
 import LottieAnimationManager
+import SmilesPageController
 
 public class TutorialViewController: UIViewController {
     
