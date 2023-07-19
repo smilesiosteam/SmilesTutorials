@@ -10,6 +10,7 @@ import SmilesFontsManager
 import SmilesUtilities
 import LottieAnimationManager
 import SmilesPageController
+import SmilesUtilities
 
 public class TutorialViewController: UIViewController {
     
@@ -62,7 +63,7 @@ public class TutorialViewController: UIViewController {
         nextButton.backgroundColor = .appRevampPurpleMainColor
         nextButton.titleLabel?.font = SmilesFonts.circular.getFont(style: .medium, size: 16)
         nextButton.setTitleColor(.white, for: .normal)
-        nextButton.addMaskedCorner(withMaskedCorner: [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner], cornerRadius: 24)
+        nextButton.layer.cornerRadius = 24
         
         bottomView.addMaskedCorner(withMaskedCorner: [.layerMinXMinYCorner, .layerMaxXMinYCorner], cornerRadius: 20)
     }
