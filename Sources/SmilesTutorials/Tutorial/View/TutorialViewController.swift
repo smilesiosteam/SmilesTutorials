@@ -22,16 +22,20 @@ public class TutorialViewController: UIViewController {
     @IBOutlet weak var pageController: JXPageControlJump!
     
     @IBOutlet weak var skipToLoginButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton! {
+        didSet {
+            nextButton.setTitle("NextTitle".localizedString.upperCamelCased, for: .normal)
+        }
+    }
     
     // MARK: -- Properties
     public static let storyboardVC = UIStoryboard(name: "Tutorial", bundle: Bundle.module).instantiateInitialViewController() as! TutorialViewController
     
     private var autoScroller: CollectionViewAutoScroller!
     private var slides = [
-        Slide(title: "Discover the world of smiles", subTitle: "Offerings panning from categories like food, travel, entertainment and many more. Explore the world of smiles and discover the best.", imageName: "slide1_image", animationName: ""),
-        Slide(title: "Earn rewards for every spend", subTitle: "Assured rewards on every spend that you make on the app. Smiles provides the best of savings and rewards for you.", imageName: "slide2_image", animationName: ""),
-        Slide(title: "Personalized suggestions", subTitle: "We at smiles personalize the offers you see based on your interests and lifestyle. Hop into a world that is tailor made for you.", imageName: "slide3_image", animationName: "")
+        Slide(title: "OnboardingTitle1".localizedString, subTitle: "OnboardingDesc1".localizedString, imageName: "slide1_image", animationName: ""),
+        Slide(title: "OnboardingTitle2".localizedString, subTitle: "OnboardingDesc2".localizedString, imageName: "slide2_image", animationName: ""),
+        Slide(title: "OnboardingTitle3".localizedString, subTitle: "OnboardingDesc3".localizedString, imageName: "slide3_image", animationName: "")
     ]
     weak var timer: Timer?
     public var skipToLoginAction={}
@@ -54,7 +58,7 @@ public class TutorialViewController: UIViewController {
         ] // .styleDouble.rawValue, .styleThick.rawValue, .styleNone.rawValue
         
         let skipToLoginAttributedTitle = NSMutableAttributedString(
-            string: "Skip to login",
+            string: "SkipToLogin".localizedString,
             attributes: underlineAttributes
         )
         

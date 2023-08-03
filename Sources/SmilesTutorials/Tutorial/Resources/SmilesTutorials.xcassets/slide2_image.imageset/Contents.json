@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "slide2_image@1x.jpg",
+      "filename" : "vectorAsset1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "slide2_image@2x.jpg",
+      "filename" : "vectorAsset1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "slide2_image@3x.jpg",
+      "filename" : "vectorAsset1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
