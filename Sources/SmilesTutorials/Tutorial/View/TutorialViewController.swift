@@ -11,6 +11,7 @@ import SmilesUtilities
 import LottieAnimationManager
 import SmilesPageController
 import SmilesUtilities
+import SmilesLanguageManager
 
 public class TutorialViewController: UIViewController {
     
@@ -73,6 +74,10 @@ public class TutorialViewController: UIViewController {
     }
     
     private func initialSetup() {
+        if SmilesLanguageManager.shared.currentLanguage == .ar {
+            collectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+            pageController.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        }
         collectionView.reloadData()
         autoScroller.resetAutoScroller()
         pageController.currentIndex = 0
@@ -185,6 +190,9 @@ extension TutorialViewController: UICollectionViewDataSource, UICollectionViewDe
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextSlideCollectionViewCell", for: indexPath) as? TextSlideCollectionViewCell {
             
             cell.configureCell(with: slides[indexPath.row])
+            if SmilesLanguageManager.shared.currentLanguage == .ar {
+                cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+            }
             return cell
         }
         
