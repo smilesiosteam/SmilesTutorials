@@ -23,21 +23,13 @@ public class TutorialViewController: UIViewController {
     @IBOutlet weak var pageController: JXPageControlJump!
     
     @IBOutlet weak var skipToLoginButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton! {
-        didSet {
-            nextButton.setTitle("NextTitle".localizedString.upperCamelCased, for: .normal)
-        }
-    }
+    @IBOutlet weak var nextButton: UIButton!
     
     // MARK: -- Properties
     public static let storyboardVC = UIStoryboard(name: "Tutorial", bundle: Bundle.module).instantiateInitialViewController() as! TutorialViewController
     
     private var autoScroller: CollectionViewAutoScroller!
-    private var slides = [
-        Slide(title: "OnboardingTitle1".localizedString, subTitle: "OnboardingDesc1".localizedString, imageName: "slide1_image", animationName: ""),
-        Slide(title: "OnboardingTitle2".localizedString, subTitle: "OnboardingDesc2".localizedString, imageName: "slide2_image", animationName: ""),
-        Slide(title: "OnboardingTitle3".localizedString, subTitle: "OnboardingDesc3".localizedString, imageName: "slide3_image", animationName: "")
-    ]
+    private var slides: [Slide] = []
     weak var timer: Timer?
     public var skipToLoginAction={}
     
@@ -63,8 +55,13 @@ public class TutorialViewController: UIViewController {
             attributes: underlineAttributes
         )
         
+        self.slides = [
+            Slide(title: "OnboardingTitle1".localizedString, subTitle: "OnboardingDesc1".localizedString, imageName: "slide1_image", animationName: ""),
+            Slide(title: "OnboardingTitle2".localizedString, subTitle: "OnboardingDesc2".localizedString, imageName: "slide2_image", animationName: ""),
+            Slide(title: "OnboardingTitle3".localizedString, subTitle: "OnboardingDesc3".localizedString, imageName: "slide3_image", animationName: "")]
         skipToLoginButton.setAttributedTitle(skipToLoginAttributedTitle, for: .normal)
         
+        nextButton.setTitle("NextTitle".localizedString.upperCamelCased, for: .normal)
         nextButton.backgroundColor = .appRevampPurpleMainColor
         nextButton.titleLabel?.font = SmilesFonts.circular.getFont(style: .medium, size: 16)
         nextButton.setTitleColor(.white, for: .normal)
