@@ -65,7 +65,7 @@ public class TutorialViewController: UIViewController {
         nextButton.backgroundColor = .appRevampPurpleMainColor
         nextButton.titleLabel?.font = SmilesFonts.circular.getFont(style: .medium, size: 16)
         nextButton.setTitleColor(.white, for: .normal)
-        nextButton.layer.cornerRadius = 24
+        nextButton.layer.cornerRadius = nextButton.frame.width/3
         
         bottomView.addMaskedCorner(withMaskedCorner: [.layerMinXMinYCorner, .layerMaxXMinYCorner], cornerRadius: 20)
     }
