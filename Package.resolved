@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/smilesiosteam/SmilesFontsManager.git",
       "state" : {
-        "revision" : "1a7068cb5a728cb7761aceb44d1c1ab2e88eba74",
-        "version" : "1.1.3"
+        "branch" : "main",
+        "revision" : "e074f68d2c555477f11a8e323143c5589ea9e9c0"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/smilesiosteam/SmilesLanguageManager.git",
       "state" : {
-        "revision" : "dedbbba61476d4721105a977759382c750f884bb",
-        "version" : "1.0.1"
+        "branch" : "main",
+        "revision" : "ec56617c4be91c35133f4fe59b403947cbcad1af"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/smilesiosteam/SmilesStorage.git",
       "state" : {
-        "revision" : "89a57c302aab530f033ba35f001b09cfee822707",
-        "version" : "1.0.0"
+        "branch" : "main",
+        "revision" : "89a57c302aab530f033ba35f001b09cfee822707"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/smilesiosteam/SmilesUtilities.git",
       "state" : {
-        "revision" : "68265ce33f3d05241ff5bce4aef736c75aba7dc0",
-        "version" : "1.3.0"
+        "branch" : "shared_Models",
+        "revision" : "476eebf3f636d33d70b62afac4fab6ff8746c134"
       }
     }
   ],

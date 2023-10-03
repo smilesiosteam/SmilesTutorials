@@ -17,7 +17,8 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/smilesiosteam/SmilesUtilities.git", .upToNextMajor(from: "1.0.0")),
+//        .package(url: "https://github.com/smilesiosteam/SmilesUtilities.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/smilesiosteam/SmilesUtilities.git", branch: "shared_Models"),
         .package(url: "https://github.com/smilesiosteam/SmilesLanguageManager.git", .upToNextMinor(from: "1.0.0")),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.7.1")),
         .package(url: "https://github.com/smilesiosteam/SmilesBaseMainRequest.git", .upToNextMinor(from: "1.0.0")),
